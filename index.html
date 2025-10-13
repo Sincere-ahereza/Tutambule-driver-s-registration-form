@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutambule Driver Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ionicons CDN -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h1>🚗 Tutambule Driver Registration</h1>
+    <form id="driverForm">
+      <!-- Full Name -->
+      <label for="fullName">
+        <ion-icon name="person-outline"></ion-icon> Full Name
+      </label>
+      <input type="text" id="fullName" name="fullName" placeholder="e.g. Ahereza John" required />
+
+      <!-- Phone Number -->
+      <label for="phone">
+        <ion-icon name="call-outline"></ion-icon> Phone Number
+      </label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +256712345678" required />
+
+      <!-- Email Address -->
+      <label for="email">
+        <ion-icon name="mail-outline"></ion-icon> Email Address
+      </label>
+      <input type="email" id="email" name="email" placeholder="e.g. ahereza@tutambule.org" required />
+
+      <!-- Driver's License -->
+      <label for="license">
+        <ion-icon name="document-text-outline"></ion-icon> Driver's License Number
+      </label>
+      <input type="text" id="license" name="license" placeholder="e.g. UG123456789" required />
+
+      <!-- Vehicle Type -->
+      <label for="vehicleType">
+        <ion-icon name="car-outline"></ion-icon> Vehicle Type
+      </label>
+      <select id="vehicleType" name="vehicleType" required>
+        <option value="">-- Select --</option>
+        <option value="lorries">Lorries</option>
+        <option value="taxi">Taxi</option>
+        <option value="minibus">Minibuses</option>
+      </select>
+
+      <!-- Plate Number -->
+      <label for="plate">
+        <ion-icon name="pricetag-outline"></ion-icon> Vehicle Plate Number
+      </label>
+      <input type="text" id="plate" name="plate" placeholder="e.g. UBA 123C" required />
+
+      <!-- Driver Photo -->
+      <label for="photo">
+        <ion-icon name="camera-outline"></ion-icon> Upload Driver Photo
+      </label>
+      <input type="file" id="photo" name="photo" accept="image/*" />
+
+      <!-- Submit Button -->
+      <button type="submit">
+        <ion-icon name="checkmark-circle-outline"></ion-icon> Register
+      </button>
+
+      <!-- Success Message -->
+      <div id="successMessage" class="success-message">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        Registration successful! Thank you for joining Tutambule.
+      </div>
+    </form>
+
+    <!-- Contact Email -->
+    <p class="contact-email">
+      📩 Need help? <a href="mailto:info@tutambule.org">Click here to email us</a>
+    </p>
+  </div>
+
+  <!-- JavaScript to show success message -->
+  <script>
+    const form = document.getElementById("driverForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent actual submission
+      successMessage.style.display = "block";
+      form.reset(); // Optional: clear the form
+    });
+  </script>
+</body>
+</html>
+
